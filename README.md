@@ -1,66 +1,59 @@
 # Yanjun Sheng — personal website
 
-A single-page academic site with **full-screen tabbed sections**, built as static
-HTML/CSS/JS and hosted on GitHub Pages. No build step, no dependencies — just open
-`index.html`.
+A minimalist multi-page academic site: a sticky sidebar (avatar + nav + links), a
+big typographic hero with a cycling multilingual greeting, pill buttons, and a
+light/dark toggle that remembers your choice. Static HTML/CSS/JS — no build step.
 
-Each nav link (About, Research, Publications, Talks, Blog, Contact) swaps the whole
-page to that section — one section is visible at a time. The page opens on **About**,
-and the URL carries a `#hash` (e.g. `…/#research`) so individual sections are
-shareable and the browser back/forward buttons work. The calligraphy name in the top
-bar is always visible and doubles as the "home" link back to About.
+The visual style is adapted from the layout of
+[zezhenwu.com](https://zezhenwu.com) (Albert Sans, `#111`/`#fff` with an indigo
+accent and a blue name gradient).
 
-## Files
+## Pages
 
-| File | What it is |
-|------|-----------|
-| `index.html` | All page content (About, Research, Publications, Talks, Blog, Contact) |
-| `styles.css` | All styling (colours, layout, responsive rules) |
-| `script.js` | Tab switching + `#hash` routing, mobile menu, footer year |
-| `images/` | Artwork cropped from the original mockup |
-| `Personal_Website_style.png` | The original design mockup (reference only) |
+| File | Nav item |
+|------|----------|
+| `index.html` | Home — hero + short intro |
+| `about.html` | About — bio, education, interests |
+| `research.html` | Research — themes + interests |
+| `publications.html` | Publications — paper list |
+| `cv.html` | CV — snapshot + PDF download |
+| `styles.css` | Shared styles (all pages) |
+| `script.js` | Theme toggle, cycling greeting, footer year |
+| `images/researcher.png` | The circular avatar |
+
+Other files in `images/` (galaxy, landscape, research thumbnails) are left over
+from an earlier design and are no longer referenced — safe to delete.
 
 ## Preview locally
 
-Just double-click `index.html`, or run a tiny server so paths behave exactly like on GitHub:
-
 ```bash
 cd personal_website
-python3 -m http.server 8000
-# then open http://localhost:8000
+python3 -m http.server 8000     # then open http://localhost:8000
 ```
 
-## Editing content
+## Things to fill in
 
-Everything you'll want to change is plain text in `index.html`:
-
-- **Name / role** — the `.brand` block in the header (top of the file).
-- **About** — the `#about` section (text + illustration).
-- **Research blurb & the 3 pipeline captions** — the `#research` section.
-- **Publications** — the `#publications` section. Each paper is a `<li class="pub">`.
-  Put the real link (arXiv / journal / ADS) in the `href="#"` of each `pub-title`,
-  and fix the "View all publications" link (e.g. to your ADS library).
-- **Talks** — the `#talks` section. Duplicate a `<li class="talk">` per talk.
-- **Blog** — the `#blog` section. Each post is an `<a class="blog-card">`. These are
-  placeholders; point them at real posts (or a Medium/Substack) when you have them.
-- **Contact** — the `#contact` section. Email, location, and GitHub link live there.
-
-To add a whole new section, add a `<section id="…" class="panel">` with a matching
-`<a href="#…" data-nav>` in the header nav — the tab wiring picks it up automatically.
-
-To swap any illustration, drop a new file into `images/` with the same name.
+- **Avatar** — currently the researcher illustration. To use a real photo, drop it
+  in `images/` and change `background-image` in `.avatar` (and `.mh-avatar`) in
+  `styles.css`.
+- **Scholar link** — the sidebar/mobile "Scholar" link is `href="#"`; point it at
+  your Google Scholar profile (search for `<!-- TODO` in the HTML).
+- **Publication links** — each title is `href="#"`; add arXiv / ADS URLs. Also set
+  the "Full list on NASA ADS" link on `publications.html`.
+- **CV** — drop a `cv.pdf` into the folder to enable the download button on `cv.html`.
+- **Greeting languages** — edit the `greetings` array in `script.js`.
 
 ## Deploy to GitHub Pages
 
-1. Create a new **public** repo on GitHub. For a personal site at
-   `https://<username>.github.io`, name it exactly `<username>.github.io`.
-   (Any other name works too — it just lives at `https://<username>.github.io/<repo>/`.)
-2. From this folder, push the files (see the commands your assistant gave you).
-3. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
-   pick `main` / `/ (root)`, **Save**.
-4. Wait ~1 minute, then visit your URL.
+1. Create a **public** repo named `yanjunsheng.github.io`.
+2. Push the files.
+3. **Settings → Pages → Deploy from branch → `main` / root.**
 
-### Custom domain (optional)
+```bash
+cd /Users/sheng/Downloads/personal_website
+git branch -M main
+git remote add origin https://github.com/yanjunsheng/yanjunsheng.github.io.git
+git push -u origin main
+```
 
-Add a file named `CNAME` containing just your domain (e.g. `yanjunsheng.com`), then set
-the DNS records your registrar/GitHub docs specify.
+Then visit `https://yanjunsheng.github.io`.

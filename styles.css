@@ -303,6 +303,28 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 .themes .t { font-weight: 700; }
 .themes .d { color: var(--secondary); font-size: var(--fs-small); margin-top: 0.2em; }
 
+/* media (GIFs / figures) inside a theme */
+.theme-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+.theme-media figure { margin: 0; flex: 1 1 260px; min-width: 0; }
+.theme-media img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--tertiary);
+  background: #fff;
+}
+.theme-media figcaption {
+  margin-top: 6px;
+  font-size: var(--fs-tiny);
+  color: var(--secondary);
+  text-align: center;
+}
+
 /* publications */
 .pubs { list-style: none; padding: 0; margin: 1.5em 0 0; }
 .pubs li { padding: 1.1em 0; border-top: 1px solid var(--tertiary); }

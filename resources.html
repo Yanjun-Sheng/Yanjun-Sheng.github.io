@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Yanjun Sheng</title>
-  <meta name="description" content="About Yanjun Sheng, PhD candidate in astronomy & astrophysics at ANU, working on the Milky Way–LMC interaction, N-body simulations, and simulation-based inference." />
+  <title>Resources | Yanjun Sheng</title>
+  <meta name="description" content="A running list of learning resources and tools Yanjun Sheng finds useful: machine learning, generative models, and astronomy." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
@@ -35,11 +35,11 @@
     <nav class="mobile-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li class="current"><a href="about.html">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="research.html">Research</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="cv.html">CV</a></li>
-        <li><a href="resources.html">Resources</a></li>
+        <li class="current"><a href="resources.html">Resources</a></li>
       </ul>
     </nav>
     <div class="mobile-social">
@@ -63,11 +63,11 @@
           <nav class="nav">
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li class="current"><a href="about.html">About</a></li>
+              <li><a href="about.html">About</a></li>
               <li><a href="research.html">Research</a></li>
               <li><a href="publications.html">Publications</a></li>
               <li><a href="cv.html">CV</a></li>
-              <li><a href="resources.html">Resources</a></li>
+              <li class="current"><a href="resources.html">Resources</a></li>
             </ul>
           </nav>
         </div>
@@ -85,49 +85,44 @@
 
     <div class="main-col">
       <main class="page">
-        <h1>About</h1>
-        <p class="lead">I'm a PhD candidate at the Research School of Astronomy &amp; Astrophysics, ANU, working with <a href="https://www.ysting.space/" target="_blank" rel="noopener">Yuan-Sen Ting</a> on the dynamics of the Milky Way's stellar halo and its interaction with the Large Magellanic Cloud (LMC).</p>
+        <h1>Resources</h1>
+        <p class="muted">A running list of courses, notes, and tools I have found genuinely useful and keep coming back to.</p>
 
-        <p>My field is <strong>near-field cosmology</strong>: I use the positions, motions, and chemistry of nearby stars as a fossil record to reconstruct how our Galaxy formed and grew. The Milky Way's outer halo is an especially sensitive recorder, still ringing from the recent, massive infall of the LMC.</p>
-
-        <p>My PhD has built, step by step, toward measuring the Milky Way and the LMC from the motions of halo stars. I began by showing, from the kinematics of about 1,100 RR&nbsp;Lyrae stars, that the LMC is on its <em>first infall</em> into the Milky Way and massive enough to leave a clear imprint on the halo. To interpret that imprint, I built <strong>HaloDance</strong>, a suite of ~2,800 tailored <strong>N-body simulations</strong> (direct gravitational simulations that follow millions of particles forward in time) spanning the masses of the two galaxies and the shape of the Milky Way's dark-matter halo, and forecast how sharply upcoming Gaia and spectroscopic data could pin those parameters down. I then built the inference machinery to realise that forecast: a <strong>simulation-based inference (SBI)</strong> pipeline in which <strong>statistical machine-learning</strong> models read physical parameters straight from the simulations, with no explicit likelihood. At the field level, a conditional flow matching model captures how much information about the two galaxies is, in principle, available in the phase space of the stellar halo; at the summary level, physically interpretable statistics built from a basis function expansion and a linear compression recover the parameters better than the mean velocity and velocity dispersion used in most previous work. I am now applying this pipeline to real stellar surveys such as H3 and SDSS-V, turning the framework into an actual measurement of the Milky Way–LMC system.</p>
-
-        <h2>Also interested in</h2>
-        <p>Beyond the Milky Way–LMC system, two directions I keep coming back to:</p>
-        <ul class="themes">
+        <h2>Machine learning &amp; generative models</h2>
+        <ul class="pubs">
           <li>
-            <span class="num">›</span>
-            <div>
-              <div class="t">Tidal stellar streams as dynamical probes</div>
-              <div class="d">Thin, cold streams like GD-1 trace the Galactic gravitational field. Modern tools such as flow matching and score-based inference can jointly recover the potential and a stream's progenitor, giving a complementary handle on the dark-matter distribution.</div>
-            </div>
+            <div class="pub-title"><a href="https://walkinglabs.github.io/hands-on-modern-rl/preface/intro" target="_blank" rel="noopener">Hands-on Modern RL</a></div>
+            <div class="pub-meta">An open-source, code-first tutorial on modern reinforcement learning, from classic control to RLHF, DPO, and GRPO for large language models.</div>
           </li>
           <li>
-            <span class="num">›</span>
-            <div>
-              <div class="t">Galactic archaeology with large spectroscopic surveys</div>
-              <div class="d">Reconstructing the Milky Way's accretion and merger history from surveys such as SDSS-V / Milky Way Mapper, and building the data-compression and deep-learning pipelines needed to turn millions of stellar spectra into robust parameters and constraints.</div>
-            </div>
+            <div class="pub-title"><a href="https://eecs189.org/sp26/" target="_blank" rel="noopener">CS 189/289A: Introduction to Machine Learning</a></div>
+            <div class="pub-meta">UC Berkeley's machine-learning course (Spring 2026): supervised and unsupervised learning, neural networks, and modern deep learning.</div>
+          </li>
+          <li>
+            <div class="pub-title"><a href="https://diffusion.csail.mit.edu/2026/index.html" target="_blank" rel="noopener">MIT 6.S184: Generative AI with Stochastic Differential Equations</a></div>
+            <div class="pub-meta">The mathematics and practice of diffusion and flow-matching generative models.</div>
+          </li>
+          <li>
+            <div class="pub-title"><a href="https://alisawuffles.notion.site/alisa-s-book-of-llms" target="_blank" rel="noopener">Alisa's Book of LLMs</a></div>
+            <div class="pub-meta">A curated notebook of notes and references on large language models.</div>
           </li>
         </ul>
 
-        <h2>Education</h2>
-        <ul class="themes">
-          <li><span class="num">2023–</span><div><div class="t">PhD in Astronomy &amp; Astrophysics, Australian National University</div><div class="d">Research School of Astronomy &amp; Astrophysics. Advisor: Yuan-Sen Ting.</div></div></li>
-          <li><span class="num">2021–23</span><div><div class="t">MSc in Astronomy &amp; Astrophysics, Australian National University</div><div class="d">Thesis: the first-infall history of the LMC from N-body simulations. Advisor: Yuan-Sen Ting.</div></div></li>
-          <li><span class="num">2017–21</span><div><div class="t">BSc in Astronomy, Beijing Normal University</div></div></li>
+        <h2>Astronomy</h2>
+        <ul class="pubs">
+          <li>
+            <div class="pub-title"><a href="https://deeplearning4astro.com/" target="_blank" rel="noopener">Deep Learning for Astrophysics</a></div>
+            <div class="pub-meta">A hands-on textbook on machine learning in astronomy, grown from NASA's Cosmic Origins AI/ML lecture series.</div>
+          </li>
         </ul>
 
-        <h2>Research interests</h2>
-        <div class="pill-row">
-          <span class="pill">MW–LMC interaction</span>
-          <span class="pill">Stellar halo dynamics</span>
-          <span class="pill">Tidal streams</span>
-          <span class="pill">N-body simulations</span>
-          <span class="pill">Simulation-based inference</span>
-          <span class="pill">Galactic archaeology</span>
-          <span class="pill">Statistical ML in astronomy</span>
-        </div>
+        <h2>Tools</h2>
+        <ul class="pubs">
+          <li>
+            <div class="pub-title"><a href="https://github.com/gregreen/arxiv_recommender" target="_blank" rel="noopener">arXiv Recommender</a></div>
+            <div class="pub-meta">Recommends new arXiv papers based on your reading history (by Greg Green).</div>
+          </li>
+        </ul>
 
         <footer class="site-footer">
           <p>&copy; <span id="year"></span> Yanjun Sheng.</p>

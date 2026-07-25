@@ -17,13 +17,16 @@ accent and a blue name gradient).
 | `research.html` | Research — themes + interests |
 | `publications.html` | Publications — paper list |
 | `cv.html` | CV — snapshot + PDF download |
+| `resources.html` | Resources — links to courses, notes, and tools |
 | `styles.css` | Shared styles (all pages) |
-| `script.js` | Theme toggle, cycling greeting, footer year |
-| `images/avatar.jpg` | The circular avatar (cropped from `selfie.jpg`) |
+| `script.js` | Theme toggle, footer year |
+| `images/selfie.jpg` | The sidebar avatar (full photo) |
+| `images/avatar.jpg` | Small square crop used by the mobile header |
+| `images/*.gif` | Animations shown in Research (MW–LMC interaction) |
 
-`images/selfie.jpg` is the original full photo. The other files in `images/`
-(researcher, galaxy, landscape, research thumbnails) are left over from an
-earlier design and are no longer referenced — safe to delete.
+The other files in `images/` (researcher, galaxy, landscape, research
+thumbnails) are left over from an earlier design and are no longer
+referenced — safe to delete.
 
 ## Preview locally
 

@@ -6,7 +6,13 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{array}
-\usepackage{fontawesome5}  % for icons (optional)
+% Use Font Awesome icons when available, but keep the CV compilable
+% on minimal LaTeX installations (such as some online editors).
+\IfFileExists{fontawesome5.sty}{%
+  \usepackage{fontawesome5}%
+}{%
+  \newcommand{\faIcon}[1]{}%
+}
 \usepackage{setspace}
 
 %-------------------- FONTS --------------------%
@@ -42,7 +48,7 @@
     {\LARGE \textbf{\name}}\\[4pt]
     {\positiontitle}\\[4pt]
     {\institution}\\[6pt]
-    \faIcon{envelope}~\href{mailto:your.email@anu.edu.au}{Yanjun.Sheng@anu.edu.au}
+    \faIcon{envelope}~\href{mailto:Yanjun.Sheng@anu.edu.au}{Yanjun.Sheng@anu.edu.au}
     \quad|\quad
     \faIcon{github}~\href{https://github.com/Yanjun-Sheng}{github.com/Yanjun-Sheng}\\[2pt]
     \faIcon{id-card}~ORCID: \href{https://orcid.org/0009-0004-1470-5201}{0009-0004-1470-5201}
@@ -105,16 +111,18 @@
 \textit{MNRAS}. \href{https://arxiv.org/abs/2507.03663}{arXiv:2507.03663}
     \item \textbf{Sheng, Y.}, Ting, Y.-S., Xue, X.-X., Chang, J., \& Tian, H. (2024).
 \textit{Uncovering the first-infall history of the LMC through its dynamical impact in the Milky Way halo},
-\textit{MNRAS}, 534, 2694. \href{https://arxiv.org/abs/2404.08975}{arXiv:2404.08975}
+\textit{MNRAS}. \href{https://arxiv.org/abs/2404.08975}{arXiv:2404.08975}
+    
 
 \end{enumerate}
 
-\textbf{Submitted}
+\textbf{In Preparation / Non-refereed}
 
 \begin{itemize}
-    \item \textbf{Sheng, Y.}, Ting, Y.-S., Różański, T., Xue, X.-X., Crocker, R.~M., \& Pan, J.
+    \item \textbf{Sheng, Y.}, Ting, Y.-S., R\'o\.za\'nski, T., Xue, X.-X., Crocker, R. M., \& Pan, J. (2026).
 \textit{LMC-induced Perturbations in the Milky Way Halo II: Bridging Field-level Inference and Summary-level Simulation-Based Inference},
-\textit{MNRAS}, submitted. \href{https://arxiv.org/abs/2607.20006}{arXiv:2607.20006}
+submitted to \textit{MNRAS}. \href{https://arxiv.org/abs/2607.20006}{arXiv:2607.20006}
+    \item \textbf{Sheng, Y.} et al., ``LMC-induced Perturbations in the Milky Way Halo III: Measuring the Milky Way--LMC System with H3 and SDSS-V'', in preparation. 
 \end{itemize}
 
 %-------------------- RESEARCH EXPERIENCE --------------------%
@@ -165,6 +173,7 @@
 \cvsection{Service \& Outreach}
 
 \begin{itemize}
+    \item Tutor for Stars (ASTR3007), Semester 1, 2026.
     \item Referee for \textit{The Astrophysical Journal} (2025).
 \end{itemize}
 
@@ -194,4 +203,3 @@
 \end{itemize}
 
 \end{document}
-

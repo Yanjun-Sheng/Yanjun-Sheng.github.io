@@ -1,7 +1,14 @@
 # Yanjun Sheng — personal website
 
-A single-page academic homepage, built as static HTML/CSS/JS and hosted on GitHub Pages.
-No build step, no dependencies — just open `index.html`.
+A single-page academic site with **full-screen tabbed sections**, built as static
+HTML/CSS/JS and hosted on GitHub Pages. No build step, no dependencies — just open
+`index.html`.
+
+Each nav link (About, Research, Publications, Talks, Blog, Contact) swaps the whole
+page to that section — one section is visible at a time. The page opens on **About**,
+and the URL carries a `#hash` (e.g. `…/#research`) so individual sections are
+shareable and the browser back/forward buttons work. The calligraphy name in the top
+bar is always visible and doubles as the "home" link back to About.
 
 ## Files
 
@@ -9,7 +16,7 @@ No build step, no dependencies — just open `index.html`.
 |------|-----------|
 | `index.html` | All page content (About, Research, Publications, Talks, Blog, Contact) |
 | `styles.css` | All styling (colours, layout, responsive rules) |
-| `script.js` | Mobile menu, scroll-spy nav highlight, footer year |
+| `script.js` | Tab switching + `#hash` routing, mobile menu, footer year |
 | `images/` | Artwork cropped from the original mockup |
 | `Personal_Website_style.png` | The original design mockup (reference only) |
 
@@ -27,16 +34,19 @@ python3 -m http.server 8000
 
 Everything you'll want to change is plain text in `index.html`:
 
-- **Name / role** — the `.hero` section near the top.
-- **About** — the `#about` article.
-- **Research blurb & the 3 pipeline captions** — the `#research` article.
-- **Publications** — the `#publications` article. Each paper is a `<li class="pub">`.
+- **Name / role** — the `.brand` block in the header (top of the file).
+- **About** — the `#about` section (text + illustration).
+- **Research blurb & the 3 pipeline captions** — the `#research` section.
+- **Publications** — the `#publications` section. Each paper is a `<li class="pub">`.
   Put the real link (arXiv / journal / ADS) in the `href="#"` of each `pub-title`,
   and fix the "View all publications" link (e.g. to your ADS library).
 - **Talks** — the `#talks` section. Duplicate a `<li class="talk">` per talk.
 - **Blog** — the `#blog` section. Each post is an `<a class="blog-card">`. These are
   placeholders; point them at real posts (or a Medium/Substack) when you have them.
-- **Contact** — the footer. Email, location, and GitHub link live there.
+- **Contact** — the `#contact` section. Email, location, and GitHub link live there.
+
+To add a whole new section, add a `<section id="…" class="panel">` with a matching
+`<a href="#…" data-nav>` in the header nav — the tab wiring picks it up automatically.
 
 To swap any illustration, drop a new file into `images/` with the same name.
 

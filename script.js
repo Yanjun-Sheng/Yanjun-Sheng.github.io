@@ -1,40 +1,66 @@
-// Mobile nav toggle
+// ---- Tabbed single-page navigation ----
+const DEFAULT_SECTION = 'about';
+const panels = document.querySelectorAll('.panel');
+const navLinks = document.querySelectorAll('.nav-links a');   // highlighted links
+const hashLinks = document.querySelectorAll('[data-nav]');    // brand + nav (clickable)
 const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
+const menu = document.querySelector('.nav-links');
 
-toggle.addEventListener('click', () => {
-  const open = links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
+const validIds = new Set([...panels].map((p) => p.id));
 
-// Close menu after clicking a link (mobile)
-links.querySelectorAll('a').forEach((a) => {
-  a.addEventListener('click', () => {
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
+const titles = {
+  about: 'About', research: 'Research', publications: 'Publications',
+  talks: 'Talks', blog: 'Blog', contact: 'Contact',
+};
+
+function showSection(id) {
+  if (!validIds.has(id)) id = DEFAULT_SECTION;
+
+  panels.forEach((p) => p.classList.toggle('active', p.id === id));
+  navLinks.forEach((a) => {
+    const active = a.getAttribute('href') === '#' + id;
+    a.classList.toggle('active', active);
+    if (active) a.setAttribute('aria-current', 'page');
+    else a.removeAttribute('aria-current');
+  });
+
+  document.title = 'Yanjun Sheng — ' + (titles[id] || 'PhD Student in Astrophysics');
+  window.scrollTo(0, 0);
+  return id;
+}
+
+function closeMenu() {
+  menu.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+}
+
+// Intercept clicks so switching is instant and the URL stays a shareable #hash
+hashLinks.forEach((a) => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    const shown = showSection(id);
+    history.pushState({ id: shown }, '', '#' + shown);
+    closeMenu();
   });
 });
 
-// Highlight the nav item for the section currently in view
-const sections = document.querySelectorAll('section[id], article[id], footer[id]');
-const navMap = {};
-document.querySelectorAll('.nav-links a').forEach((a) => {
-  navMap[a.getAttribute('href').slice(1)] = a;
+// Back/forward buttons
+window.addEventListener('popstate', () => {
+  showSection((location.hash || '#' + DEFAULT_SECTION).slice(1));
 });
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        Object.values(navMap).forEach((a) => a.classList.remove('active'));
-        const link = navMap[entry.target.id];
-        if (link) link.classList.add('active');
-      }
-    });
-  },
-  { rootMargin: '-45% 0px -50% 0px' }
-);
-sections.forEach((s) => observer.observe(s));
+// Initial load — honour an incoming #hash, else default to About
+(function init() {
+  const id = showSection((location.hash || '').slice(1));
+  history.replaceState({ id }, '', '#' + id);
+})();
 
-// Current year in footer
+// ---- Mobile menu ----
+toggle.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
+// ---- Footer year ----
 document.getElementById('year').textContent = new Date().getFullYear();

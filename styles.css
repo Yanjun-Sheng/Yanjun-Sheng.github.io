@@ -157,9 +157,9 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
   border-radius: 50%;
   border: 3px solid var(--tertiary);
   margin-bottom: 1em;
-  background-image: url('images/researcher.png');
+  background-image: url('images/avatar.jpg');
   background-size: cover;
-  background-position: center 12%;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .brand-title {
@@ -330,9 +330,9 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
     width: 44px; height: 44px;
     border-radius: 50%;
     border: 2px solid var(--tertiary);
-    background-image: url('images/researcher.png');
+    background-image: url('images/avatar.jpg');
     background-size: cover;
-    background-position: center 12%;
+    background-position: center;
     flex-shrink: 0;
   }
   .mh-title { font-size: var(--h5); font-weight: 600; margin: 0; }

@@ -19,10 +19,11 @@ accent and a blue name gradient).
 | `cv.html` | CV — snapshot + PDF download |
 | `styles.css` | Shared styles (all pages) |
 | `script.js` | Theme toggle, cycling greeting, footer year |
-| `images/researcher.png` | The circular avatar |
+| `images/avatar.jpg` | The circular avatar (cropped from `selfie.jpg`) |
 
-Other files in `images/` (galaxy, landscape, research thumbnails) are left over
-from an earlier design and are no longer referenced — safe to delete.
+`images/selfie.jpg` is the original full photo. The other files in `images/`
+(researcher, galaxy, landscape, research thumbnails) are left over from an
+earlier design and are no longer referenced — safe to delete.
 
 ## Preview locally
 
@@ -33,9 +34,9 @@ python3 -m http.server 8000     # then open http://localhost:8000
 
 ## Things to fill in
 
-- **Avatar** — currently the researcher illustration. To use a real photo, drop it
-  in `images/` and change `background-image` in `.avatar` (and `.mh-avatar`) in
-  `styles.css`.
+- **Avatar** — `images/avatar.jpg`, a square crop of your hiking selfie. To
+  re-crop or swap it, replace that file (or change `background-image` in `.avatar`
+  and `.mh-avatar` in `styles.css`).
 - **Scholar link** — the sidebar/mobile "Scholar" link is `href="#"`; point it at
   your Google Scholar profile (search for `<!-- TODO` in the HTML).
 - **Publication links** — each title is `href="#"`; add arXiv / ADS URLs. Also set

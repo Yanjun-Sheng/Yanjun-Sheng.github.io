@@ -40,9 +40,9 @@ ORCID, ADS library, and arXiv links are all live.
 
 ## Things to fill in
 
-- **CV PDF** — the "Download CV" button links to `cv.pdf`. Compile `CV.tex`
-  (`pdflatex CV.tex`) and drop the resulting `cv.pdf` into this folder. LaTeX is not
-  installed here, so I couldn't build it for you.
+- **CV PDF** — `CV.pdf` (compiled from `CV.tex`) is in the folder and linked from
+  the "Download CV" button on `cv.html`. Re-run `pdflatex CV.tex` to refresh it after
+  editing the source. The link is case-sensitive, so keep the filename `CV.pdf`.
 - **Avatar** — the sidebar shows the full `images/selfie.jpg`; the mobile header uses
   the square `images/avatar.jpg` crop. Swap either by replacing the file or editing
   `.avatar` / `.mh-avatar` in `styles.css`.

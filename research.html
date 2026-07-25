@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research | Yanjun Sheng</title>
-  <meta name="description" content="Yanjun Sheng's research — the Milky Way–LMC interaction, the HaloDance N-body simulation suite, and simulation-based inference of the stellar halo." />
+  <meta name="description" content="Yanjun Sheng's research: the Milky Way–LMC interaction, the HaloDance N-body simulation suite, and simulation-based inference of the stellar halo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
@@ -97,31 +97,25 @@
           <li>
             <span class="num">02</span>
             <div>
-              <div class="t">N-body simulations — the HaloDance suite</div>
-              <div class="d">I built a suite of ~2,800 tailored N-body simulations of the MW–LMC system and used it to forecast how precisely Gaia astrometry, combined with spectroscopy, can measure the key parameters — reaching fractional uncertainties of roughly 11–25%.</div>
+              <div class="t">The HaloDance simulation suite</div>
+              <div class="d">I built a suite of ~2,800 tailored N-body simulations of the MW–LMC system and used it to forecast how precisely Gaia astrometry, combined with spectroscopy, can measure the key parameters, reaching fractional uncertainties of roughly 11–25%.</div>
             </div>
           </li>
           <li>
             <span class="num">03</span>
             <div>
               <div class="t">Simulation-based inference</div>
-              <div class="d">I connect simulations to data with simulation-based inference — training statistical machine-learning models (neural networks, normalizing flows) to infer parameters without an explicit likelihood — and I quantify how much information is lost when moving from full field-level inference to compressed summary statistics.</div>
+              <div class="d">I connect the simulations to data with simulation-based inference. At the field level, a conditional flow matching model learns the likelihood of the halo's full phase space and quantifies how much information about the Milky Way and LMC is available in principle. At the summary level, I compress the halo into physically interpretable statistics using a basis function expansion followed by a linear compression, and find that they outperform the traditional mean velocity and velocity dispersion.</div>
+            </div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div>
+              <div class="t">Stellar parameters from slitless spectroscopy</div>
+              <div class="d">I also derive stellar parameters from low-resolution (R&nbsp;&geq;&nbsp;450) slitless grism spectroscopy with neural networks, building pipelines that turn large, low-resolution spectroscopic datasets into reliable stellar labels.</div>
             </div>
           </li>
         </ul>
-
-        <h2>Other directions</h2>
-        <p>I also work at the edges of this program: <strong>tidal stellar streams</strong> as cold dynamical probes of the Galactic potential (with modern tools like flow matching and score-based inference), and <strong>galactic archaeology</strong> with large spectroscopic surveys such as SDSS-V — including the data-compression and deep-learning pipelines that make inference from millions of spectra tractable.</p>
-
-        <h2>Research interests</h2>
-        <div class="pill-row">
-          <span class="pill">Near-field cosmology</span>
-          <span class="pill">MW–LMC interaction</span>
-          <span class="pill">N-body simulations</span>
-          <span class="pill">Simulation-based inference</span>
-          <span class="pill">Tidal streams</span>
-          <span class="pill">Statistical ML in astronomy</span>
-        </div>
 
         <p class="muted" style="margin-top:2em">See the papers behind this work on the <a href="publications.html">Publications</a> page.</p>
 

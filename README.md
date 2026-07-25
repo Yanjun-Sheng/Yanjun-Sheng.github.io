@@ -40,9 +40,10 @@ ORCID, ADS library, and arXiv links are all live.
 - **CV PDF** — the "Download CV" button links to `cv.pdf`. Compile `CV.tex`
   (`pdflatex CV.tex`) and drop the resulting `cv.pdf` into this folder. LaTeX is not
   installed here, so I couldn't build it for you.
-- **Avatar** — `images/avatar.jpg`, a square crop of `selfie.jpg`. Replace that file
-  (or change `background-image` in `.avatar` / `.mh-avatar` in `styles.css`) to swap.
-- **Greeting languages** — edit the `greetings` array in `script.js`.
+- **Avatar** — the sidebar shows the full `images/selfie.jpg`; the mobile header uses
+  the square `images/avatar.jpg` crop. Swap either by replacing the file or editing
+  `.avatar` / `.mh-avatar` in `styles.css`.
+- **Greeting** — the home page shows a waving 👋 (`.greeting` / `.wave` in `styles.css`).
 
 ## Deploy to GitHub Pages
 

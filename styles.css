@@ -153,15 +153,19 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
   justify-content: space-between;
 }
 .avatar {
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  border: 3px solid var(--tertiary);
-  margin-bottom: 1em;
-  background-image: url('images/avatar.jpg');
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1706 / 1279;
+  border-radius: 14px;
+  border: 1px solid var(--tertiary);
+  margin-bottom: 1.2em;
+  background-image: url('images/selfie.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+.sidebar a:has(> .avatar) { display: block; }
 .brand-title {
   font-size: var(--h5);
   font-weight: 600;
@@ -199,16 +203,23 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
   padding-top: 10vh;
 }
 .greeting {
-  font-size: var(--fs-xl);
-  margin: 0 0 0.3em;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  background: var(--greeting-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: clamp(40px, 5.5vw, 66px);
+  line-height: 1;
+  margin: 0 0 0.15em;
 }
-.greeting.fade-out { opacity: 0; }
+.wave {
+  display: inline-block;
+  transform-origin: 72% 72%;
+  animation: wave 2.4s ease-in-out infinite;
+}
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
 .hero-line {
   font-size: var(--h1);
   line-height: var(--lh-head-lg);
@@ -368,6 +379,5 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition-duration: 0.01ms !important; }
-  .greeting { transition: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
 }

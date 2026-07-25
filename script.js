@@ -9,21 +9,7 @@ if (themeToggle) {
   });
 }
 
-// ---- Cycling multilingual greeting (home page only) ----
-const greetingEl = document.getElementById('greeting');
-if (greetingEl) {
-  const greetings = ['Hi there!', '你好！', "G'day!", '¡Hola!', 'こんにちは！'];
-  let i = 0;
-  function cycle() {
-    greetingEl.classList.add('fade-out');
-    setTimeout(() => {
-      i = (i + 1) % greetings.length;
-      greetingEl.textContent = greetings[i];
-      setTimeout(() => greetingEl.classList.remove('fade-out'), 50);
-    }, 500);
-  }
-  setTimeout(() => setInterval(cycle, 2500), 1000);
-}
+// Greeting is a static waving emoji; no cycling needed.
 
 // ---- Footer year ----
 const yearEl = document.getElementById('year');

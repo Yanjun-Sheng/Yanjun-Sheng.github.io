@@ -4,8 +4,12 @@
 \usepackage[margin=1.8cm]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=cvblue,linkcolor=cvblue]{hyperref}
 \usepackage{array}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage[nopatch=footnote]{microtype}
 % Use Font Awesome icons when available, but keep the CV compilable
 % on minimal LaTeX installations (such as some online editors).
 \IfFileExists{fontawesome5.sty}{%
@@ -21,7 +25,8 @@
 \usepackage{lmodern}
 
 %-------------------- SECTION FORMATTING --------------------%
-\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\definecolor{cvblue}{HTML}{17365D}
+\titleformat{\section}{\large\bfseries\color{cvblue}}{}{0em}{}[\color{cvblue}\titlerule]
 \titlespacing*{\section}{0pt}{*2}{0.5em}
 
 % Lists tight
@@ -29,7 +34,7 @@
 \setlist[enumerate]{leftmargin=1.5em, topsep=2pt, itemsep=2pt}
 
 %-------------------- COMMANDS --------------------%
-\newcommand{\cvsection}[1]{\section*{#1}}
+\newcommand{\cvsection}[1]{\Needspace{4\baselineskip}\section*{#1}}
 \newcommand{\cventry}[4]{%
   \noindent\textbf{#1} \hfill #2 \\
   \textit{#3} \hfill #4 \par
@@ -42,10 +47,11 @@
 %-------------------- DOCUMENT --------------------%
 \begin{document}
 \pagestyle{empty} % no page numbers
+\raggedbottom
 
 %-------------------- HEADER --------------------%
 \begin{center}
-    {\LARGE \textbf{\name}}\\[4pt]
+    {\LARGE \textbf{\color{cvblue}\name}}\\[4pt]
     {\positiontitle}\\[4pt]
     {\institution}\\[6pt]
     \faIcon{envelope}~\href{mailto:Yanjun.Sheng@anu.edu.au}{Yanjun.Sheng@anu.edu.au}
@@ -63,47 +69,43 @@
 
 \cventry
   {PhD in Astronomy \& Astrophysics}
-  {2023.8 -- Present}
+  {Aug 2023 -- Present}
   {Australian National University, Canberra, Australia}
   {Supervisor: Yuan-Sen Ting}
 
 \begin{itemize}
-    \item Thesis (working title): \textit{“Constraining the properties of the Milky Way’s halo with the Large Magellanic Cloud”}
-    \item Expected completion: 2027.5
+    \item Thesis (working title): \textit{``Constraining the properties of the Milky Way's halo with the Large Magellanic Cloud''}
+    \item Expected completion: May 2027
 \end{itemize}
 
 \cventry
   {MSc in Astronomy \& Astrophysics}
-  {2021.7 -- 2023.6}
+  {Jul 2021 -- Jun 2023}
   {Australian National University, Canberra, Australia}
   {Supervisor: Yuan-Sen Ting}
 
 \begin{itemize}
-    \item Thesis: \textit{“Unraveling the first-infall history of the Large Magellanic Cloud using N-body simulations”}
+    \item Thesis: \textit{``Unraveling the first-infall history of the Large Magellanic Cloud using N-body simulations''}
 \end{itemize}
 
 \cventry
   {BSc in Astronomy}
-  {2017.9 -- 2021.6}
+  {Sep 2017 -- Jun 2021}
   {Beijing Normal University, Beijing, China}
 
 
 %-------------------- RESEARCH INTERESTS --------------------%
 \cvsection{Research Interests}
 
-\begin{itemize}
-    \item Milky Way–LMC interaction, stellar halo dynamics, tidal streams
-    \item N-body simulations and dynamical modeling of galaxies
-    \item Simulation-based inference (SBI)
-    \item Galactic archaeology 
-    \item Spectroscopic pipelines
-\end{itemize}
+Milky Way--LMC interactions; stellar-halo dynamics and tidal streams; N-body
+simulations and galaxy modeling; simulation-based inference; Galactic
+archaeology, near field cosmology and stellar spectroscopy.
 
 %-------------------- PUBLICATIONS --------------------%
 \cvsection{Publications}
 
 % Tip: use ADS bibtex or manual list; bold your name
-\textbf{Refereed}
+\textbf{Published / Refereed}
 
 \begin{enumerate}
     \item \textbf{Sheng, Y.}, Ting, Y.-S., \& Xue, X.-X. (2025).
@@ -112,65 +114,70 @@
     \item \textbf{Sheng, Y.}, Ting, Y.-S., Xue, X.-X., Chang, J., \& Tian, H. (2024).
 \textit{Uncovering the first-infall history of the LMC through its dynamical impact in the Milky Way halo},
 \textit{MNRAS}. \href{https://arxiv.org/abs/2404.08975}{arXiv:2404.08975}
-    
-
 \end{enumerate}
 
-\textbf{In Preparation / Non-refereed}
+\textbf{Submitted / Preprints}
 
-\begin{itemize}
+\begin{enumerate}[resume]
     \item \textbf{Sheng, Y.}, Ting, Y.-S., R\'o\.za\'nski, T., Xue, X.-X., Crocker, R. M., \& Pan, J. (2026).
 \textit{LMC-induced Perturbations in the Milky Way Halo II: Bridging Field-level Inference and Summary-level Simulation-Based Inference},
 submitted to \textit{MNRAS}. \href{https://arxiv.org/abs/2607.20006}{arXiv:2607.20006}
+\end{enumerate}
+
+\textbf{In Preparation}
+
+\begin{enumerate}[resume]
     \item \textbf{Sheng, Y.} et al., ``LMC-induced Perturbations in the Milky Way Halo III: Measuring the Milky Way--LMC System with H3 and SDSS-V'', in preparation. 
-\end{itemize}
+\end{enumerate}
 
 %-------------------- RESEARCH EXPERIENCE --------------------%
+\newpage
 \cvsection{Research Experience}
 
 \cventry
   {PhD Researcher}
-  {2023.8 -- Present}
+  {Aug 2023 -- Present}
   {Australian National University, RSAA}
   {Canberra, Australia}
 
 \begin{itemize}
-    \item Ran a suite of $\sim$3000 high-resolution N-body simulations to model the dynamical impact of the LMC on the Milky Way stellar halo.
-    \item Implemented robust statistical summaries (velocity moments, anisotropy, spatial distribution) to compare simulations and observations.
-    \item Developed a simulation-based inference framework to constrain MW–LMC parameters from stellar halo phase-space distributions.
+    \item Built and ran the HaloDance suite of $\sim$3,000 high-resolution N-body simulations to map the dynamical response of the Milky Way stellar halo to the LMC.
+    \item Designed robust statistical summaries of velocity moments, anisotropy, and spatial structure, enabling direct comparisons between simulations and stellar-halo observations.
+    \item Developed a production simulation-based inference pipeline combining field-level and summary-level approaches to constrain Milky Way--LMC parameters from phase-space data.
+    \item Currently applying the inference pipeline to H3 and SDSS-V stellar surveys to obtain observational measurements of the Milky Way--LMC system.
+\end{itemize}
+
+\cventry
+  {Observing Experience}
+  {2023 -- 2024}
+  {KMTNet, Siding Spring Observatory}
+  {80 nights}
+
+\begin{itemize}
+    \item Conducted target acquisition, telescope focusing, and real-time data-quality assessment during 80 nights of observing.
 \end{itemize}
 
 %-------------------- PRESENTATIONS --------------------%
-\cvsection{Selected Presentations \& Posters}
+\cvsection{Selected Talks}
 
 \begin{itemize}
-    \item ``Constraining the Mass Distribution of the Milky Way and the Large Magellanic Cloud from the Phase-Space Structure of the Stellar Halo'', \textit{How Stars Move Around and What They Tell Us About Galaxies}, Sexten Center for Astrophysics, Sesto (Sexten), Italy, 2026.7 (contributed talk).
-    \item ``Unveiling Milky Way-LMC properties from All-Sky Kinematics of the Galactic Halo'', \textit{SDSS-V collaboration meeting}, Heidelberg, Germany, 2025.6 (contributed talk).
-    \item ``Unveiling Milky Way-LMC properties from All-Sky Kinematics of the Galactic Halo'', \textit{XMC II: Clouds over Yellowstone}, Bozeman, USA, 2025.5 (contributed talk).
+    \item ``Constraining the Mass Distribution of the Milky Way and the Large Magellanic Cloud from the Phase-Space Structure of the Stellar Halo'', \textit{How Stars Move Around and What They Tell Us About Galaxies}, Sexten Center for Astrophysics, Sesto (Sexten), Italy, Jul 2026 (contributed talk).
+    \item ``Unveiling Milky Way-LMC Properties from All-Sky Kinematics of the Galactic Halo'', \textit{SDSS-V Collaboration Meeting}, Heidelberg, Germany, Jun 2025 (contributed talk).
+    \item ``Unveiling Milky Way-LMC Properties from All-Sky Kinematics of the Galactic Halo'', \textit{XMC II: Clouds over Yellowstone}, Bozeman, USA, May 2025 (contributed talk).
 \end{itemize}
 
 %-------------------- GRANTS & AWARDS --------------------%
 \cvsection{Grants, Scholarships \& Awards}
 
 \begin{itemize}
-    \item RSAA HDR travel fund
+    \item RSAA HDR Travel Fund
     \item RSAA PhD Scholarship (2023--2027), RSAA/ANU
     \item RSAA Supplementary Scholarship (2023--2027), RSAA/ANU
     \item RSAA Masters (Advanced) Scholarship (2021--2023), RSAA/ANU
-    \item JingShi Scholarship (2018--2020), BNU
-    \item Merit Student Scholarship (2019), BNU
-    \item Scholarship on Social Works (2018), BNU
-\end{itemize}
-
-%-------------------- OBSERVING & INSTRUMENTATION --------------------%
-\cvsection{Observing \& Instrumentation Experience}
-
-\begin{itemize}
-    \item KMTnet telescope, Siding Spring Observatory, [2023,2024] -- 80 nights of observing. Responsible for target acquisition, focus, and basic data quality checks.
 \end{itemize}
 
 %-------------------- SERVICE & OUTREACH --------------------%
-\cvsection{Service \& Outreach}
+\cvsection{Teaching \& Service}
 
 \begin{itemize}
     \item Tutor for Stars (ASTR3007), Semester 1, 2026.
@@ -181,25 +188,25 @@ submitted to \textit{MNRAS}. \href{https://arxiv.org/abs/2607.20006}{arXiv:2607.
 %-------------------- TECHNICAL SKILLS --------------------%
 \cvsection{Technical Skills}
 
-\begin{tabular}{p{3cm} p{12cm}}
-\textbf{Programming} & Python (NumPy, SciPy, Astropy, PyTorch, h5py, pandas), bash, C, SQL, Pytorch \\[2pt]
-\textbf{ML / Stats} & Normalizing flows, flow matching, neural networks, linear regression, MCMC \\[2pt]
-\textbf{Simulations} & N-body simulations (e.g., GADGET-4), GalIC / initial-condition generation, halo potentials \\[2pt]
-\end{tabular}
+\begin{tabularx}{\textwidth}{@{}p{3.3cm}X@{}}
+\textbf{Programming} & Python, Bash, C, SQL \\[2pt]
+\textbf{Scientific tools} & NumPy, SciPy, Astropy, pandas, h5py \\[2pt]
+\textbf{ML / Inference} & PyTorch, simulation-based inference, normalizing flows, flow matching, neural networks, MCMC \\[2pt]
+\textbf{Simulations} & GADGET-4, GalIC, N-body methods, initial-condition generation, halo potentials \\
+\end{tabularx}
 
 %-------------------- REFERENCES --------------------%
 \cvsection{References}
 
-\begin{itemize}
-    \item \textbf{Yuan-Sen Ting} \\
-          Associate Professor, The Ohio State University \\
-          Email: \href{mailto:ting.yuansen.astro@gmail.com}{ting.yuansen.astro@gmail.com}
-    \item \textbf{Roland Crocker} \\
-          Associate Professor, Australian National University \\
-          Email: \href{mailto:roland.crocker@anu.edu.au}{roland.crocker@anu.edu.au}
-    \item \textbf{Xiang-Xiang Xue} \\
-          Professor, National Astronomical Observatories, Chinese Academy of Sciences \\
-          Email: \href{mailto:xuexx@nao.cas.cn}{xuexx@nao.cas.cn}
-\end{itemize}
+\small
+\begin{tabularx}{\textwidth}{@{}p{3.1cm}p{7.8cm}X@{}}
+\textbf{Yuan-Sen Ting} & Associate Professor, The Ohio State University
+  & \href{mailto:ting.yuansen.astro@gmail.com}{ting.yuansen.astro@gmail.com} \\[3pt]
+\textbf{Roland Crocker} & Associate Professor, Australian National University
+  & \href{mailto:roland.crocker@anu.edu.au}{roland.crocker@anu.edu.au} \\[3pt]
+\textbf{Xiang-Xiang Xue} & Professor, National Astronomical Observatories, Chinese Academy of Sciences
+  & \href{mailto:xuexx@nao.cas.cn}{xuexx@nao.cas.cn} \\
+\end{tabularx}
+\normalsize
 
 \end{document}

@@ -1,0 +1,196 @@
+\documentclass[11pt,a4paper]{article}
+
+%-------------------- PACKAGES --------------------%
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{array}
+\usepackage{fontawesome5}  % for icons (optional)
+\usepackage{setspace}
+
+%-------------------- FONTS --------------------%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+%-------------------- SECTION FORMATTING --------------------%
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{*2}{0.5em}
+
+% Lists tight
+\setlist[itemize]{leftmargin=1.2em, topsep=2pt, itemsep=2pt}
+\setlist[enumerate]{leftmargin=1.5em, topsep=2pt, itemsep=2pt}
+
+%-------------------- COMMANDS --------------------%
+\newcommand{\cvsection}[1]{\section*{#1}}
+\newcommand{\cventry}[4]{%
+  \noindent\textbf{#1} \hfill #2 \\
+  \textit{#3} \hfill #4 \par
+}
+
+\newcommand{\name}{Yanjun Sheng}
+\newcommand{\positiontitle}{PhD Candidate in Astronomy \& Astrophysics}
+\newcommand{\institution}{Research School of Astronomy \& Astrophysics, ANU}
+
+%-------------------- DOCUMENT --------------------%
+\begin{document}
+\pagestyle{empty} % no page numbers
+
+%-------------------- HEADER --------------------%
+\begin{center}
+    {\LARGE \textbf{\name}}\\[4pt]
+    {\positiontitle}\\[4pt]
+    {\institution}\\[6pt]
+    \faIcon{envelope}~\href{mailto:your.email@anu.edu.au}{Yanjun.Sheng@anu.edu.au}
+    \quad|\quad
+    \faIcon{github}~\href{https://github.com/Yanjun-Sheng}{github.com/Yanjun-Sheng}\\[2pt]
+    \faIcon{id-card}~ORCID: \href{https://orcid.org/0009-0004-1470-5201}{0009-0004-1470-5201}
+    \quad|\quad
+    ADS: \href{https://ui.adsabs.harvard.edu/user/libraries/TKjJ8f_tQKGrWdAtl_J5jA}{ADS Library}
+\end{center}
+
+\vspace{0.5em}
+
+%-------------------- EDUCATION --------------------%
+\cvsection{Education}
+
+\cventry
+  {PhD in Astronomy \& Astrophysics}
+  {2023.8 -- Present}
+  {Australian National University, Canberra, Australia}
+  {Supervisor: Yuan-Sen Ting}
+
+\begin{itemize}
+    \item Thesis (working title): \textit{“Constraining the properties of the Milky Way’s halo with the Large Magellanic Cloud”}
+    \item Expected completion: 2027.5
+\end{itemize}
+
+\cventry
+  {MSc in Astronomy \& Astrophysics}
+  {2021.7 -- 2023.6}
+  {Australian National University, Canberra, Australia}
+  {Supervisor: Yuan-Sen Ting}
+
+\begin{itemize}
+    \item Thesis: \textit{“Unraveling the first-infall history of the Large Magellanic Cloud using N-body simulations”}
+\end{itemize}
+
+\cventry
+  {BSc in Astronomy}
+  {2017.9 -- 2021.6}
+  {Beijing Normal University, Beijing, China}
+
+
+%-------------------- RESEARCH INTERESTS --------------------%
+\cvsection{Research Interests}
+
+\begin{itemize}
+    \item Milky Way–LMC interaction, stellar halo dynamics, tidal streams
+    \item N-body simulations and dynamical modeling of galaxies
+    \item Simulation-based inference (SBI)
+    \item Galactic archaeology 
+    \item Spectroscopic pipelines
+\end{itemize}
+
+%-------------------- PUBLICATIONS --------------------%
+\cvsection{Publications}
+
+% Tip: use ADS bibtex or manual list; bold your name
+\textbf{Refereed}
+
+\begin{enumerate}
+    \item \textbf{Sheng, Y.}, Ting, Y.-S., \& Xue, X.-X. (2025).
+\textit{LMC-induced Perturbations in the Milky Way Halo: I. HaloDance Simulation Suite and Observational Forecasts},
+\textit{MNRAS}. \href{https://arxiv.org/abs/2507.03663}{arXiv:2507.03663}
+    \item \textbf{Sheng, Y.}, Ting, Y.-S., Xue, X.-X., Chang, J., \& Tian, H. (2024).
+\textit{Uncovering the first-infall history of the LMC through its dynamical impact in the Milky Way halo},
+\textit{MNRAS}, 534, 2694. \href{https://arxiv.org/abs/2404.08975}{arXiv:2404.08975}
+
+\end{enumerate}
+
+\textbf{Submitted}
+
+\begin{itemize}
+    \item \textbf{Sheng, Y.}, Ting, Y.-S., Różański, T., Xue, X.-X., Crocker, R.~M., \& Pan, J.
+\textit{LMC-induced Perturbations in the Milky Way Halo II: Bridging Field-level Inference and Summary-level Simulation-Based Inference},
+\textit{MNRAS}, submitted. \href{https://arxiv.org/abs/2607.20006}{arXiv:2607.20006}
+\end{itemize}
+
+%-------------------- RESEARCH EXPERIENCE --------------------%
+\cvsection{Research Experience}
+
+\cventry
+  {PhD Researcher}
+  {2023.8 -- Present}
+  {Australian National University, RSAA}
+  {Canberra, Australia}
+
+\begin{itemize}
+    \item Ran a suite of $\sim$3000 high-resolution N-body simulations to model the dynamical impact of the LMC on the Milky Way stellar halo.
+    \item Implemented robust statistical summaries (velocity moments, anisotropy, spatial distribution) to compare simulations and observations.
+    \item Developed a simulation-based inference framework to constrain MW–LMC parameters from stellar halo phase-space distributions.
+\end{itemize}
+
+%-------------------- PRESENTATIONS --------------------%
+\cvsection{Selected Presentations \& Posters}
+
+\begin{itemize}
+    \item ``Unveiling Milky Way-LMC properties from All-Sky Kinematics of the Galactic Halo'', \textit{SDSS-V collaboration meeting}, Heidelberg, Germany, 2025.6 (contributed talk).
+    \item ``Unveiling Milky Way-LMC properties from All-Sky Kinematics of the Galactic Halo'', \textit{XMC II: Clouds over Yellowstone}, Bozeman, USA, 2025.5 (contributed talk).
+\end{itemize}
+
+%-------------------- GRANTS & AWARDS --------------------%
+\cvsection{Grants, Scholarships \& Awards}
+
+\begin{itemize}
+    \item RSAA HDR travel fund
+    \item RSAA PhD Scholarship (2023--2027), RSAA/ANU
+    \item RSAA Supplementary Scholarship (2023--2027), RSAA/ANU
+    \item RSAA Masters (Advanced) Scholarship (2021--2023), RSAA/ANU
+    \item JingShi Scholarship (2018--2020), BNU
+    \item Merit Student Scholarship (2019), BNU
+    \item Scholarship on Social Works (2018), BNU
+\end{itemize}
+
+%-------------------- OBSERVING & INSTRUMENTATION --------------------%
+\cvsection{Observing \& Instrumentation Experience}
+
+\begin{itemize}
+    \item KMTnet telescope, Siding Spring Observatory, [2023,2024] -- 80 nights of observing. Responsible for target acquisition, focus, and basic data quality checks.
+\end{itemize}
+
+%-------------------- SERVICE & OUTREACH --------------------%
+\cvsection{Service \& Outreach}
+
+\begin{itemize}
+    \item Referee for \textit{The Astrophysical Journal} (2025).
+\end{itemize}
+
+
+%-------------------- TECHNICAL SKILLS --------------------%
+\cvsection{Technical Skills}
+
+\begin{tabular}{p{3cm} p{12cm}}
+\textbf{Programming} & Python (NumPy, SciPy, Astropy, PyTorch, h5py, pandas), bash, C, SQL, Pytorch \\[2pt]
+\textbf{ML / Stats} & Normalizing flows, flow matching, neural networks, linear regression, MCMC \\[2pt]
+\textbf{Simulations} & N-body simulations (e.g., GADGET-4), GalIC / initial-condition generation, halo potentials \\[2pt]
+\end{tabular}
+
+%-------------------- REFERENCES --------------------%
+\cvsection{References}
+
+\begin{itemize}
+    \item \textbf{Yuan-Sen Ting} \\
+          Associate Professor, The Ohio State University \\
+          Email: \href{mailto:ting.yuansen.astro@gmail.com}{ting.yuansen.astro@gmail.com}
+    \item \textbf{Roland Crocker} \\
+          Associate Professor, Australian National University \\
+          Email: \href{mailto:roland.crocker@anu.edu.au}{roland.crocker@anu.edu.au}
+    \item \textbf{Xiang-Xiang Xue} \\
+          Professor, National Astronomical Observatories, Chinese Academy of Sciences \\
+          Email: \href{mailto:xuexx@nao.cas.cn}{xuexx@nao.cas.cn}
+\end{itemize}
+
+\end{document}
+

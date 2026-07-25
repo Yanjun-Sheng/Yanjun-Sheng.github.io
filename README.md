@@ -32,16 +32,16 @@ cd personal_website
 python3 -m http.server 8000     # then open http://localhost:8000
 ```
 
+Content is synced to `CV.tex` (education, papers, talks, awards, skills). GitHub,
+ORCID, ADS library, and arXiv links are all live.
+
 ## Things to fill in
 
-- **Avatar** — `images/avatar.jpg`, a square crop of your hiking selfie. To
-  re-crop or swap it, replace that file (or change `background-image` in `.avatar`
-  and `.mh-avatar` in `styles.css`).
-- **Scholar link** — the sidebar/mobile "Scholar" link is `href="#"`; point it at
-  your Google Scholar profile (search for `<!-- TODO` in the HTML).
-- **Publication links** — each title is `href="#"`; add arXiv / ADS URLs. Also set
-  the "Full list on NASA ADS" link on `publications.html`.
-- **CV** — drop a `cv.pdf` into the folder to enable the download button on `cv.html`.
+- **CV PDF** — the "Download CV" button links to `cv.pdf`. Compile `CV.tex`
+  (`pdflatex CV.tex`) and drop the resulting `cv.pdf` into this folder. LaTeX is not
+  installed here, so I couldn't build it for you.
+- **Avatar** — `images/avatar.jpg`, a square crop of `selfie.jpg`. Replace that file
+  (or change `background-image` in `.avatar` / `.mh-avatar` in `styles.css`) to swap.
 - **Greeting languages** — edit the `greetings` array in `script.js`.
 
 ## Deploy to GitHub Pages
@@ -53,7 +53,7 @@ python3 -m http.server 8000     # then open http://localhost:8000
 ```bash
 cd /Users/sheng/Downloads/personal_website
 git branch -M main
-git remote add origin https://github.com/yanjunsheng/yanjunsheng.github.io.git
+git remote add origin https://github.com/Yanjun-Sheng/Yanjun-Sheng.github.io.git
 git push -u origin main
 ```
 

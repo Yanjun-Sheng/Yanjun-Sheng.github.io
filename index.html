@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yanjun Sheng — PhD Student in Astrophysics</title>
+  <meta name="description" content="Yanjun Sheng — PhD student in astrophysics at ANU, studying near-field cosmology, the Milky Way stellar halo, and the Milky Way–LMC interaction." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Yanjun Sheng — PhD Student in Astrophysics" />
+  <meta property="og:description" content="Near-field cosmology: the Milky Way stellar halo, the MW–LMC interaction, and phase-space structure of stars." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Yellowtail&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="#top" class="nav-brand">YS</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <img class="hero-galaxy" src="images/galaxy.png" alt="" aria-hidden="true" />
+    <div class="stars" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1 class="hero-name">Yanjun Sheng</h1>
+      <p class="hero-role">&bull;&nbsp; PhD Student in Astrophysics &nbsp;&bull;</p>
+    </div>
+    <div class="hero-divider" aria-hidden="true"><span>&#10022;</span></div>
+  </section>
+
+  <!-- ============ CARDS ============ -->
+  <main class="wrap">
+    <div class="cards">
+
+      <!-- ABOUT -->
+      <article class="card" id="about">
+        <div class="ribbon ribbon-blue">About Me</div>
+        <div class="card-body about-body">
+          <div class="about-text">
+            <p>I am a PhD student at the <strong>Research School of Astronomy and Astrophysics, ANU</strong>.</p>
+            <p>My research focuses on understanding the dynamical structure of the Milky Way halo and its interaction with the Large Magellanic Cloud.</p>
+          </div>
+          <figure class="about-figure">
+            <img src="images/researcher.png" alt="Illustration of Yanjun Sheng at a desk with a laptop" loading="lazy" />
+          </figure>
+        </div>
+      </article>
+
+      <!-- RESEARCH -->
+      <article class="card" id="research">
+        <div class="ribbon ribbon-teal">Research</div>
+        <div class="card-body">
+          <p class="lead">
+            I study near-field cosmology through the dynamics of the Milky Way stellar halo,
+            the interaction between the Milky Way and the Large Magellanic Cloud, and the
+            phase-space structure of stars. My work combines simulations, observations, and
+            statistical inference to constrain the mass distribution and assembly history of
+            our Galaxy.
+          </p>
+
+          <div class="pipeline">
+            <figure class="pipe-step">
+              <img src="images/research-mwlmc.png" alt="Milky Way and LMC interaction" loading="lazy" />
+              <figcaption>MW&ndash;LMC<br />interaction</figcaption>
+            </figure>
+            <div class="pipe-arrow" aria-hidden="true">&rarr;</div>
+            <figure class="pipe-step">
+              <img src="images/research-nbody.png" alt="N-body simulation of phase-space structure" loading="lazy" />
+              <figcaption>N&ndash;body simulations<br />&amp; phase-space</figcaption>
+            </figure>
+            <div class="pipe-arrow" aria-hidden="true">&rarr;</div>
+            <figure class="pipe-step">
+              <img src="images/research-inference.png" alt="Statistical inference contours" loading="lazy" />
+              <figcaption>Inference &amp;<br />constraints</figcaption>
+            </figure>
+          </div>
+
+          <div class="interests">
+            <span class="interests-icon" aria-hidden="true">&#10059;</span>
+            <span class="interests-label">Research interests:</span>
+            <span class="tag">Statistical ML in Astro</span>
+            <span class="tag">Simulation-based Inference</span>
+            <span class="tag">Near-field Cosmology</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PUBLICATIONS -->
+      <article class="card" id="publications">
+        <div class="ribbon ribbon-blue">Publications</div>
+        <div class="card-body">
+          <ul class="pub-list">
+            <li class="pub">
+              <div class="pub-mark" aria-hidden="true"></div>
+              <div class="pub-info">
+                <a class="pub-title" href="#">Constraining the Mass Distribution of the Milky Way and the LMC from Phase-Space Structure of the Stellar Halo</a>
+                <div class="pub-meta">Sheng et al. 2026, MNRAS, <em>submitted</em></div>
+              </div>
+            </li>
+            <li class="pub">
+              <div class="pub-mark" aria-hidden="true"></div>
+              <div class="pub-info">
+                <a class="pub-title" href="#">First-infall or Second-passage? Signatures of the LMC in the Milky Way Halo</a>
+                <div class="pub-meta">Sheng et al. 2024, MNRAS, 534, 2694</div>
+              </div>
+            </li>
+            <li class="pub">
+              <div class="pub-mark" aria-hidden="true"></div>
+              <div class="pub-info">
+                <a class="pub-title" href="#">(Upcoming) MOPED summaries pipeline for H3 and SDSS-V</a>
+                <div class="pub-meta"><em>In preparation</em></div>
+              </div>
+            </li>
+          </ul>
+          <a class="pub-all" href="#">View all publications &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- TALKS -->
+    <section class="section" id="talks">
+      <div class="ribbon ribbon-teal section-ribbon">Talks</div>
+      <ul class="talk-list">
+        <li class="talk">
+          <span class="talk-date">2026</span>
+          <div>
+            <div class="talk-title">Add your talk title here</div>
+            <div class="talk-meta">Conference / seminar &middot; Location</div>
+          </div>
+        </li>
+        <li class="talk">
+          <span class="talk-date">2024</span>
+          <div>
+            <div class="talk-title">Another talk or poster</div>
+            <div class="talk-meta">Conference / seminar &middot; Location</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- BLOG -->
+    <section class="section" id="blog">
+      <div class="ribbon ribbon-blue section-ribbon">Blog</div>
+      <div class="blog-grid">
+        <a class="blog-card" href="#">
+          <div class="blog-date">Coming soon</div>
+          <div class="blog-title">Your first post</div>
+          <p class="blog-excerpt">Write about your research, code, or life in astronomy. Replace this card with a real post.</p>
+        </a>
+        <a class="blog-card" href="#">
+          <div class="blog-date">Coming soon</div>
+          <div class="blog-title">A note on simulation-based inference</div>
+          <p class="blog-excerpt">A short, accessible explainer is a great way to make your work discoverable.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ CONTACT / FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <img class="footer-bg" src="images/landscape.png" alt="" aria-hidden="true" />
+    <div class="contact-card">
+      <a class="contact-item" href="mailto:yanjun.sheng@anu.edu.au">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </span>
+        <span>yanjun.sheng@anu.edu.au</span>
+      </a>
+      <span class="contact-sep" aria-hidden="true"></span>
+      <span class="contact-item">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <span>ANU, Canberra, Australia</span>
+      </span>
+      <span class="contact-sep" aria-hidden="true"></span>
+      <a class="contact-item" href="https://github.com/yanjunsheng" target="_blank" rel="noopener">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.22-3.37-1.22-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </span>
+        <span>github.com/yanjunsheng</span>
+      </a>
+    </div>
+    <p class="copyright">&copy; <span id="year"></span> Yanjun Sheng. Built with GitHub Pages.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
